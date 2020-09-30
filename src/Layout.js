@@ -25,7 +25,8 @@ const TreeNode = props => {
 const useTree = initialTree => {
   const [tree, setTree] = useState(initialTree);
   /**
-   * Replaces the node at specified `path` with a new `node`.
+   * Calls `visitor` with a node at specified `path`, where modifications
+   * can be made to the node.
    */
   const modifyNodeAtPath = (path, visitor) => produce(rootNode => {
     let currentNode = rootNode;
